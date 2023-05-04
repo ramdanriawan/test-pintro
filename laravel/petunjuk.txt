@@ -1,0 +1,15 @@
+- install xampp di link https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.3.26/xampp-windows-x64-7.3.26-1-VC15-installer.exe/download
+
+- oke oke / next next saja
+
+- start apache & mysql (2 service teratas), pastikan xampp yg baru di install bukan xampp lainnyaa.. bisa juga langsung start dari folder instalasi / xampp-control.exe
+
+- copy file download program ke folder penginstalan xampp -> htdocs -> extract to.
+
+- buat database (untuk nama database silakan di cek di file .env, DB_NAME)
+
+- import database (ada di folder ini juga)
+
+- buka link localhost/nama-folder-yang-diekstrak-dihtdocs/public
+
+- Done!

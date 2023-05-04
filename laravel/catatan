@@ -1,0 +1,41 @@
+
+                        <div class="form-group">
+                            <label class="col-md-12">Jabatan</label>
+                            <div class="col-md-12">
+                                <select class="form-control form-control-line" name='jabatan_id'>
+                                    @foreach($jabatans as $jabatan)
+                                    <option value="{{ $jabatan->id }}" @if(old('jabatan_id')==$jabatan->id || $pegawai->jabatan_id == $jabatan->id)) selected
+                                        @endif>{{ $jabatan->nama }} (Gaji:
+                                        {{ toIdr($jabatan->gaji) . ", Tunjangan: " . toIdr($jabatan->tunjangan) }})
+                                    </option>
+                                    @endforeach
+                                </select>
+
+                                @error('jabatan_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        // create
+                        <div class="form-group">
+                            <label class="col-md-12">Jabatan</label>
+                            <div class="col-md-12">
+                                <select class="form-control form-control-line" name='jabatan_id'>
+                                    @foreach($jabatans as $jabatan)
+                                    <option value="{{ $jabatan->id }}" @if(old('jabatan_id')==$jabatan->id) selected
+                                        @endif>{{ $jabatan->nama }} (Gaji:
+                                        {{ toIdr($jabatan->gaji) . ", Tunjangan: " . toIdr($jabatan->tunjangan) }})
+                                    </option>
+                                    @endforeach
+                                </select>
+
+                                @error('jabatan_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>

@@ -1,0 +1,1 @@
+php artisan crud:generate Session --fields_from_file="resources\crud-generator\session.json" --view-path=session --controller-namespace=App\\Http\\Controllers --route-group=session --form-helper=html

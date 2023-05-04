@@ -1,0 +1,50 @@
+{
+    "fields": [{
+            "name": "user_id ",
+            "type": "bigint#unsigned"
+        },
+        {
+            "name": "ip_address",
+            "type": "varchar"
+        },
+        {
+            "name": "user_agent",
+            "type": "text"
+        },
+        {
+            "name": "payload",
+            "type": "text"
+        },
+        {
+            "name": "last_activity ",
+            "type": "integer"
+        }
+    ],
+    "foreign_keys": [{
+        "column": "user_id",
+        "references": "id",
+        "on": "users",
+        "onDelete": "cascade"
+    }],
+    "relationships": [{
+        "name": "user",
+        "type": "belongsTo",
+        "class": "App\\Models\\User"
+    }],
+    "validations": [{
+        "field": "user_id",
+        "rules": "required|exists:user,id"
+    }, {
+        "field": "ip_address",
+        "rules": "required|max:45"
+    }, {
+        "field": "user_agent",
+        "rules": "required"
+    }, {
+        "field": "payload",
+        "rules": "required"
+    }, {
+        "field": "last_activity ",
+        "rules": "required|integer|digits_between:1,6"
+    }]
+}
